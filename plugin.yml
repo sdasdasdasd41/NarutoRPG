@@ -1,0 +1,9 @@
+name: NarutoRPG
+main: com.zavcoding.narutorpg.NarutoRPG
+version: 0.1
+author: zavcoding
+authors: [zachoooo, javoris767]
+description: Naruto Role playing!
+commands:
+    narutorpg:
+        description: Default command
