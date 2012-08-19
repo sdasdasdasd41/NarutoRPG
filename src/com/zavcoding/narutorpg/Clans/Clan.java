@@ -11,43 +11,41 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import com.zavcoding.narutorpg.NarutoRPG;
 
 public abstract class Clan {
-
 	private NarutoRPG plugin;
-
+	
 	private int currentChakra;
-
+	
 	private FileConfiguration config;
-
+	
 	public Clan(NarutoRPG instance) {
 		plugin = instance;
 		config = YamlConfiguration.loadConfiguration(new File(plugin.clanFolder, getName() + File.separator + "yml"));
-	}
+		}
 
 	public abstract String getName();
 
 	public abstract int getMaxChackra();
-	
+
 	public abstract void onEnable();
 
 	public NarutoRPG getPluginInstance() {
 		return plugin;
-	}
+		}
 
 	public FileConfiguration getConfig() {
 		return config;
-	}
+		}
 
 	public int getCurrentChakra() {
 		return currentChakra;
 	}
-	
 	public void setCurrentChakra(int i) {
 		currentChakra = i;
-	}
+		}
 
 	public void changeCurrentChakraBy(int i) {
 		currentChakra += i;
-	}
+		}
 
 	public List<OfflinePlayer> getClanPlayers() {
 		List<OfflinePlayer> list = new ArrayList<OfflinePlayer>();
@@ -55,8 +53,8 @@ public abstract class Clan {
 			OfflinePlayer player = plugin.getServer().getOfflinePlayer(s);
 			if (player != null) {
 				list.add(plugin.getServer().getOfflinePlayer(s));
+				}
 			}
-		}
 		return list;
+		}
 	}
-}
