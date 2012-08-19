@@ -28,6 +28,9 @@ public class NarutoRPGCommands implements CommandExecutor {
 						// Join a clan
 						if (args[0].equalsIgnoreCase("leave")) {
 							// Leave a clan
+							if(args[0].equalsIgnoreCase("members")) {
+								// Members of a clan
+							}
 						}
 					}
 				}
