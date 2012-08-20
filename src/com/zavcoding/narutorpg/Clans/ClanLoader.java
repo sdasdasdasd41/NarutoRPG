@@ -18,7 +18,6 @@ public class ClanLoader {
 		plugin = instance;
 		}
 
-	@SuppressWarnings("resource")
 	public List<Clan> load() {
 		List<Clan> list = new ArrayList<Clan>();
 
