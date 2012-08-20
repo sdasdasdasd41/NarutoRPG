@@ -9,7 +9,8 @@ public class NarutoRPG extends JavaPlugin {
 
 	// Global Fields
 	public Logger logger;
-	public File clanFolder = new File(getDataFolder() + File.pathSeparator + "players");
+	public File clanFolder = new File(getDataFolder() + File.pathSeparator + "clans");
+	public File clanClassFolder = new File(clanFolder + File.pathSeparator + "classes");
 	
 	// Global Managers
 	
@@ -35,6 +36,9 @@ public class NarutoRPG extends JavaPlugin {
 		}
 		if (!clanFolder.exists()) {
 			clanFolder.mkdir();
+		}
+		if (!clanClassFolder.exists()) {
+			clanClassFolder.mkdir();
 		}
 	}
 }
