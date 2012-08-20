@@ -26,6 +26,8 @@ public abstract class Clan {
 	public abstract String getName();
 
 	public abstract int getMaxChackra();
+	
+	public abstract void onEnable();
 
 	public NarutoRPG getPluginInstance() {
 		return plugin;
@@ -38,7 +40,7 @@ public abstract class Clan {
 	public int getCurrentChakra() {
 		return currentChakra;
 	}
-
+	
 	public void setCurrentChakra(int i) {
 		currentChakra = i;
 	}
