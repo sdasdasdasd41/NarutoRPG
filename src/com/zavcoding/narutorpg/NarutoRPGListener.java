@@ -31,7 +31,7 @@ public class NarutoRPGListener implements Listener {
 				if (csce.isCancelled()) {
 					return;
 				}
-				
+		
 				event.setLine(0, ChatColor.RED + "[NarutoRPG]");
 				event.setLine(1, ChatColor.GREEN + clan.getName());
 				plugin.MM.sendMessage(player.getName(), ChatColor.AQUA + "You successfully created a join sgn for the clan " + clan.getName() + "!");
