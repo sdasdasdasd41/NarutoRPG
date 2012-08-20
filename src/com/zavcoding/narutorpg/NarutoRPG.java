@@ -69,4 +69,12 @@ public class NarutoRPG extends JavaPlugin {
 		}
 	}
 	
+	public Clan getClan(String s) {
+		for (Clan c : clans) {
+			if (c.getClanPlayers().contains(s)) {
+				return c;
+			}
+		}
+		return null;
+	}
 }
