@@ -1,4 +1,4 @@
-package com.zavcoding.narutorpg.Commands;
+package com.zavcoding.narutorpg.commands;
 
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -16,25 +16,53 @@ public class NarutoRPGCommands implements CommandExecutor {
 		plugin = narutoRPG;
 	}
 
-	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		if (args.length == 0) {
 			sender.sendMessage(plugin.prefix + ChatColor.AQUA + " Try: /narutorpg help =)");
-			return false;			
-			} else if (args.length == 1) {
-				if (args[0].equalsIgnoreCase("reload")) {
+			return true;
+		}
+		if (args.length == 1) {
+			if (args[0].equalsIgnoreCase("help")) {
+				if(sender.hasPermission("narutorpg.help")) {
+					// Help command
+					return true;
+					}else{
+						sender.sendMessage(plugin.prefix + ChatColor.RED + "Don't have permission!");
+					}
+			}
+			if (args[0].equalsIgnoreCase("reload")) {
+				if(sender.hasPermission("narutorpg.reload")) {
 					// Reload config
-					if (args[0].equalsIgnoreCase("join")) {
-						// Join a clan
-						if (args[0].equalsIgnoreCase("leave")) {
-							// Leave a clan
-							if(args[0].equalsIgnoreCase("members")) {
-								// Members of a clan
-							}
-						}
+					return true;
+					}else{
+						sender.sendMessage(plugin.prefix + ChatColor.RED + "Don't have permission!");
 					}
 				}
+			if (args[0].equalsIgnoreCase("join")) {
+				if(sender.hasPermission("narutorpg.join")) {
+					// Join a clan
+					return true;
+					}else{
+						sender.sendMessage(plugin.prefix + ChatColor.RED + "Don't have permission!");
+					}
+				}
+			if (args[0].equalsIgnoreCase("leave")) {
+				if(sender.hasPermission("narutorpg.leave")) {			
+				// Leave a clan
+					return true;
+					}else{
+						sender.sendMessage(plugin.prefix + ChatColor.RED + "Don't have permission!");
+					}
+				}
+			if(args[0].equalsIgnoreCase("members")) {
+				if(sender.hasPermission("narutorpg.members")) {
+					// Members of a clan
+					return true;
+					}else{
+						sender.sendMessage(plugin.prefix + ChatColor.RED + "Don't have permission!");
+					}
 			}
+		}
 		return false;
 	}
 }

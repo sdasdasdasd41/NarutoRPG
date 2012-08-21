@@ -7,7 +7,6 @@ import java.util.List;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
-
 import com.zavcoding.narutorpg.NarutoRPG;
 
 public abstract class Clan {
@@ -46,7 +45,6 @@ public abstract class Clan {
 	public void changeCurrentChakraBy(int i) {
 		currentChakra += i;
 	}
-	
 	public void addPlayer(String s) {
 		List<OfflinePlayer> list = new ArrayList<OfflinePlayer>();
 		OfflinePlayer player = plugin.getServer().getOfflinePlayer(s);

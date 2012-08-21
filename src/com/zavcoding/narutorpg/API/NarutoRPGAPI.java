@@ -8,6 +8,7 @@ import com.zavcoding.narutorpg.NarutoRPG;
 import com.zavcoding.narutorpg.Clans.Clan;
 
 public class NarutoRPGAPI {
+	public Clan clan;
 
 	final NarutoRPG plugin;
 	
