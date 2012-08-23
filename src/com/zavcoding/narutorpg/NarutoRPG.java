@@ -74,7 +74,7 @@ public class NarutoRPG extends JavaPlugin {
 			clanprops.mkdir();
 		}
 	}
-	
+
 	public Clan getClan(String s) {
 		for (Clan c : clans) {
 			if (c.getClanPlayers().contains(s)) {
