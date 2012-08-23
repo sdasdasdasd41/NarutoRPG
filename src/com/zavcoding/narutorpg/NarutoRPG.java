@@ -17,18 +17,21 @@ import com.zavcoding.narutorpg.Messaging.MessageManager;
 
 public class NarutoRPG extends JavaPlugin {
 
-	// Global Fields
-	public Logger logger;
-	public List<Clan> clans;
-	
-	public File clanFolder = new File("./plugins/NarutoRPG/Clans");
-	public File clanClassFolder = new File("./plugins/NarutoRPG/Classes");
-	
-	public String prefix = "[" + ChatColor.DARK_RED + "NarutoRPG" + ChatColor.WHITE + "] ";
-	
 	// Global Managers
 	MessageManager MM = new MessageManager(this);
 	ClanLoader clanLoader = new ClanLoader(this);
+	
+	// Global Fields
+	public Logger logger;
+	public List<Clan> clans;
+	public Clan clan;
+	
+	public File clanFolder = new File("./plugins/NarutoRPG/Clans");
+	public File clanClassFolder = new File("./plugins/NarutoRPG/Classes");
+	public File clanprops = new File("./plugins/NarutoRPG/Clans/" + clanLoader.getClass().getName() + ".yml");
+	
+	public String prefix = "[" + ChatColor.DARK_RED + "NarutoRPG" + ChatColor.WHITE + "] ";
+	
 	
 	@Override
 	public void onEnable() {
@@ -66,6 +69,9 @@ public class NarutoRPG extends JavaPlugin {
 		}
 		if (!clanClassFolder.exists()) {
 			clanClassFolder.mkdir();
+		}
+		if (!clanprops.exists()) {
+			clanprops.mkdir();
 		}
 	}
 	
