@@ -40,7 +40,8 @@ public class NarutoRPGCommands implements CommandExecutor {
 			if (args[0].equalsIgnoreCase("reload")) {
 				if(sender.hasPermission("narutorpg.reload")) {
 					// Reload config
-					plugin.reloadConfig();				
+					plugin.reloadConfig();
+					sender.sendMessage(plugin.prefix + ChatColor.GREEN + "Config reloaded!");
 					return true;
 					}else{
 						sender.sendMessage(plugin.prefix + ChatColor.RED + "Don't have permission!");

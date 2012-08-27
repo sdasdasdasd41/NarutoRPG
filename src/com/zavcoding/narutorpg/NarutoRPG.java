@@ -26,21 +26,21 @@ public class NarutoRPG extends JavaPlugin {
 	public List<Clan> clans;
 	public Clan clan;
 	
-	public File clanFolder = new File("./plugins/NarutoRPG/Clans");
-	public File clanClassFolder = new File("./plugins/NarutoRPG/Classes");
-	public File clanprops = new File("./plugins/NarutoRPG/Clans/" + clanLoader.getClass().getName() + ".yml");
+	public File mainFolder = new File("./plugins/NarutoRPG");
+	public File clanFolder = new File(mainFolder + "/Clans");
+	public File clanClassFolder = new File(mainFolder + "/Classes");
 	
 	public String prefix = "[" + ChatColor.DARK_RED + "NarutoRPG" + ChatColor.WHITE + "] ";
-	
 	
 	@Override
 	public void onEnable() {
 		logger = getServer().getLogger();
 		checkFolders();
+		try {
 		clans = clanLoader.load(); // Add clans to the list
-		if (clans.size() < 1) {
-			logger.severe("No clans are located in the clans folder. This plugin is shutting down");
-			setEnabled(false);
+		} catch (Exception e) {
+			logger.severe("Can't load the classes!");
+			e.printStackTrace();
 		}
 		getCommand("narutorpg").setExecutor(new NarutoRPGCommands(this));
 		Bukkit.getPluginManager().registerEvents(new NarutoRPGListener(this), this);
@@ -69,9 +69,6 @@ public class NarutoRPG extends JavaPlugin {
 		}
 		if (!clanClassFolder.exists()) {
 			clanClassFolder.mkdir();
-		}
-		if (!clanprops.exists()) {
-			clanprops.mkdir();
 		}
 	}
 
