@@ -8,9 +8,9 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import com.zavcoding.narutorpg.Clans.ClanLoader;
 import com.zavcoding.narutorpg.Clans.Clan;
-import com.zavcoding.narutorpg.commands.NarutoRPGCommands;
+import com.zavcoding.narutorpg.Clans.ClanLoader;
+import com.zavcoding.narutorpg.Commands.NarutoRPGCommands;
 import com.zavcoding.narutorpg.Messaging.MessageManager;
 
 

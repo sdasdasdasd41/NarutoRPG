@@ -1,4 +1,4 @@
-package com.zavcoding.narutorpg.commands;
+package com.zavcoding.narutorpg.Commands;
 
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;

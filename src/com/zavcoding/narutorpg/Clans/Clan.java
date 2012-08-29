@@ -15,6 +15,12 @@ public abstract class Clan {
 	private int currentChakra;
 
 	private FileConfiguration config;
+	
+	public Clan() {
+		plugin = null;
+		config = null;
+		System.out.println(this + " cannot create a valid instance. Null constructor error.");
+	}
 
 	public Clan(NarutoRPG instance) {
 		plugin = instance;
