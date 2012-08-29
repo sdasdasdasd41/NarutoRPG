@@ -18,7 +18,6 @@ public class ClanLoader {
 		plugin = instance;
 		}
 
-	@SuppressWarnings("resource")
 	public List<Clan> load() {
 		List<Clan> list = new ArrayList<Clan>();
 
@@ -65,8 +64,10 @@ public class ClanLoader {
 				 */
 
 			} catch (Exception ex) {
+				ex.printStackTrace();
 				plugin.logger.info("Error loading '" + name + "' clan! Clan disabled.");
 				} catch (Error ex) {
+					ex.printStackTrace();
 					plugin.logger.info("Error loading '" + name + "' clan! Clan disabled.");
 					}
 
